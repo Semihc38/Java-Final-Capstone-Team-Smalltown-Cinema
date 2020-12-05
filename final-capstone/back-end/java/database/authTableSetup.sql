@@ -40,19 +40,3 @@ INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpUL
 
 COMMIT TRANSACTION;
 
-CREATE SEQUENCE seq_movie_id
-  INCREMENT BY 1
-  NO MAXVALUE
-  NO MINVALUE
-  CACHE 1;
-  
-  DROP TABLE IF EXISTS movies;
-
-CREATE TABLE movies (
-       movie_id int DEFAULT nextval('seq_movie_id'::regclass) NOT NULL,
-       title varchar(200) NOT NULL,
-       release_date date NOT NULL,
-       isFeatured boolean NOT NULL,
-       overview varchar(512),
-       CONSTRAINT PK_movie PRIMARY KEY (movie_id)
-       );

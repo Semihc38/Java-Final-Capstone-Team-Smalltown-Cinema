@@ -18,10 +18,14 @@ if(currentToken != null) {
 
 export default new Vuex.Store({
   state: {
+    movies: [],
     token: currentToken || '',
     user: currentUser || {}
   },
   mutations: {
+    SET_FEATURED_MOVIES(state, data){
+      state.movies = data;
+    },
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
       localStorage.setItem('token', token);

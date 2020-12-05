@@ -2,6 +2,7 @@ package com.techelevator.application.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.techelevator.application.model.Movie;
 
 
 @RestController
+@CrossOrigin
 public class MovieController {
 	
 	private MovieDAO movieDao;
