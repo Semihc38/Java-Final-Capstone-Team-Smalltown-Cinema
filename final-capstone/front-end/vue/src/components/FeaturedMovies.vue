@@ -1,7 +1,6 @@
 <template>
     <div class ="Featured-Movies">
-        <h1 v-for="movie in this.$store.state.movies" v-bind:key="movie.title"></h1>
-        <movie-card />
+        <movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/>
 
     </div>
 </template>
@@ -10,13 +9,19 @@ import applicationServices from '@/services/ApplicationServices.js'
 import MovieCard from './MovieCard.vue';
 export default {
   components: { 
-      MovieCard 
+      MovieCard
+      
   },
     name:'featured-movies',
+    data(){
+        return {
+            movies: []
+        }
+    },
     methods:{
         getFeaturedMovies(){
             applicationServices.getFeaturedMovies().then(response => {
-                this.$store.commit("SET_FEATURED_MOVIES", response.data)
+                this.movies = response.data
             });
         }
     },
