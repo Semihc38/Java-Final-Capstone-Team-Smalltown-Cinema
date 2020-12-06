@@ -51,6 +51,7 @@ public class JDBCMovieDAO implements MovieDAO {
 		movie.setReleaseDate(rowset.getString("release_date"));
 		movie.setFeatured(rowset.getBoolean("isfeatured"));
 		movie.setOverview(rowset.getString("overview"));
+		movie.setPoster(rowset.getString("poster"));
 
 		return movie;
 	}

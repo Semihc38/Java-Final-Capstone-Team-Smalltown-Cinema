@@ -7,20 +7,22 @@ public class Movie {
 	private String releaseDate;
 	private boolean isFeatured;
 	private String overview;
+	private String poster;
 	
 	public Movie() {
 	}
 	
 	
-	public Movie(int movieId, String title, String releaseDate, boolean isFeatured, String overview) {
+	public Movie(int movieId, String title, String releaseDate, boolean isFeatured, String overview, String poster) {
 		
 		this.movieId = movieId;
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.isFeatured = isFeatured;
 		this.overview = overview;
+		this.poster = poster;
+		
 	}
-
 	public int getMovieId() {
 		return movieId;
 	}
@@ -59,6 +61,16 @@ public class Movie {
 
 	public void setOverview(String overview) {
 		this.overview = overview;
+	}
+
+
+	public String getPoster() {
+		return poster;
+	}
+
+
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}
 	
 	

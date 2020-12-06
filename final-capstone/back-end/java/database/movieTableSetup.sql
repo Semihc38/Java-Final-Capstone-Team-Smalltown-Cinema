@@ -6,6 +6,7 @@ CREATE TABLE movies (
        release_date date NOT NULL,
        isFeatured boolean NOT NULL,
        overview varchar(512),
+       poster varchar(500),
        CONSTRAINT PK_movie PRIMARY KEY (movie_id)
        );
        

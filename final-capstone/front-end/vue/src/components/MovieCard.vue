@@ -1,6 +1,8 @@
 <template>
     <div class="card">
         <h1 class ="movie-title">{{this.movie.title}}</h1>
+        <img class ="movie-poster" v-if="movie.poster" v-bind:src="movie.poster" />
+      
         
     </div>
 </template>
