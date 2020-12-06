@@ -1,4 +1,8 @@
-
+CREATE SEQUENCE seq_movie_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
 
 CREATE TABLE movies (
        movie_id int DEFAULT nextval('seq_movie_id'::regclass) NOT NULL,
