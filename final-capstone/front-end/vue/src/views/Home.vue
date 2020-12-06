@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You are on the homepage</p>
+    <h1 class="heading">Welcome to Small Town Cinema</h1>
+    <h1 class="featured-movies">Featured Movies</h1>
     <featured-movies />
   </div>
 </template>
@@ -15,3 +15,11 @@ export default {
   },
 };
 </script>
+<style>
+.heading{
+  color: black;
+}
+.featured-movies{
+  color:black;
+}
+</style>

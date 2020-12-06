@@ -15,6 +15,8 @@ release_date = '1993-06-11' WHERE movie_id = 3;
 
 UPDATE movies SET isFeatured = true WHERE movie_id = 2;
 
+DELETE FROM movies WHERE movie_id = 4;
+
 INSERT INTO movies (title, release_date, isFeatured, overview, poster) VALUES ('National Lampoon"s Christmas Vacation', '1989-12-01', true, 'It"s Christmas time and the Griswolds are preparing for a family seasonal celebration, but things never run smoothly for Clark, his wife Ellen and their two kids. Clark"s continual bad luck is worsened by his obnoxious family guests, but he manages to keep going knowing that his Christmas bonus is due soon.',
 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/dm2KpvwzfyPduUK1yBATxPveSgd.jpg');
 

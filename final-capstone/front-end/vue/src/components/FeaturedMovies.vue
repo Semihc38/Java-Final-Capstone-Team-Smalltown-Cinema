@@ -1,5 +1,5 @@
 <template>
-    <div class ="Featured-Movies">
+    <div class ="movie-container">
         <movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/>
 
     </div>
@@ -31,5 +31,9 @@ export default {
 }
 </script>
 <style scoped>
-
+.movie-container {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 </style>
