@@ -1,17 +1,19 @@
 <template>
 
     <div class = "showtimes-container">
-        <movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/>
+        <h1 class ="start-time">{{this.showtimes.start_time}}</h1>
+
+        <!--<movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/> -->
     </div>
     
 </template>
 
 <script>
 import applicationServices from '@/services/ApplicationServices.js'
-import MovieCard from './MovieCard.vue';
+//import MovieCard from './MovieCard.vue'
 export default {
     components: {
-        MovieCard
+        //MovieCard
     },
     name:'showtimes',
     props:{
