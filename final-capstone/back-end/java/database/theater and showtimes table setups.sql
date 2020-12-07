@@ -44,8 +44,8 @@ INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '11:00:00
 INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '07:00:00');
 INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '11:00:00');
 INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '07:00:00');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (6, 4, '11:00:00');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (6, 4, '07:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (4, 4, '11:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (4, 4, '07:00:00');
 
 SELECT * FROM showtimes WHERE movie_id = 1;
 

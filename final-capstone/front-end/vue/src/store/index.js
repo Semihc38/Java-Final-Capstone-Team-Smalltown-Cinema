@@ -19,9 +19,9 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     chosenMovie:{
-      movie_id: 0,
-      theater_id: 0,
-      start_time: ''
+      movieId: 0,
+      theaterId: 0,
+      startTime: ''
     },
     movies: [],
     token: currentToken || '',

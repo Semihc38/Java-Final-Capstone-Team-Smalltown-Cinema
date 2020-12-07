@@ -1,7 +1,7 @@
 <template>
 
     <div class = "showtimes-container">
-        <h1 class ="start-time">{{this.showtimes.start_time}}</h1>
+        <showtime-card class ="start-time" v-for="showtime in showtimes" v-bind:key="showtime.showtimeId" v-bind:showtime="showtime" />
 
         <!--<movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/> -->
     </div>
@@ -10,26 +10,26 @@
 
 <script>
 import applicationServices from '@/services/ApplicationServices.js'
+import ShowtimeCard from './ShowtimeCard.vue';
 //import MovieCard from './MovieCard.vue'
 export default {
     components: {
+        ShowtimeCard
         //MovieCard
     },
     name:'showtimes',
-    props:{
-        movie_id: Number
-    },
     data(){
         return {
-            movies: []
+            movies: [],
+            showtimes: []
         }
     },
     methods:{
     
     },
     created(){
-        applicationServices.getShowtimeById(this.movie_id).then(response =>{
-            this.$store.commit("SET_CHOSEN_MOVIE", response.data)
+        applicationServices.getShowtimesByMovieId(this.$route.params.id).then(response =>{
+            this.showtimes = response.data;
         });
         
     }
