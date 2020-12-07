@@ -18,11 +18,19 @@ if(currentToken != null) {
 
 export default new Vuex.Store({
   state: {
+    chosenMovie:{
+      movie_id: 0,
+      theater_id: 0,
+      start_time: ''
+    },
     movies: [],
     token: currentToken || '',
     user: currentUser || {}
   },
   mutations: {
+    SET_CHOSEN_MOVIE(state, data){
+      state.chosenMovie = data;
+    },
     SET_FEATURED_MOVIES(state, data){
       state.movies = data;
     },

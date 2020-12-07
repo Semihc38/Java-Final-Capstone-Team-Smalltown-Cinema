@@ -1,7 +1,6 @@
 <template>
     <div class ="movie-container">
         <movie-card v-for="movie in this.movies" v-bind:key="movie.title" v-bind:movie="movie"/>
-
     </div>
 </template>
 <script>

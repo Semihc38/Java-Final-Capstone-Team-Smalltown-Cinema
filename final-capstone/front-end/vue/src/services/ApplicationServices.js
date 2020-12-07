@@ -11,5 +11,8 @@ const http = axios.create({
 export default{
     getFeaturedMovies(){
         return http.get('/featuredMovies');
+    },
+    getShowtimesByMovieId(id){
+        return http.get(`/showtimes/${id}`);
     }
 }

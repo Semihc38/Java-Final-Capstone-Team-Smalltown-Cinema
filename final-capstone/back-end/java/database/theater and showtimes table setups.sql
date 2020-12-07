@@ -28,4 +28,35 @@ CONSTRAINT PK_showtime PRIMARY KEY (showtime_id)
 ALTER TABLE showtimes ADD CONSTRAINT FK_movie FOREIGN KEY (movie_id) REFERENCES movies(movie_id);
 ALTER TABLE showtimes ADD CONSTRAINT FK_theater FOREIGN KEY (theater_id) REFERENCES theaters(theater_id);
 
-ALTER TABLE movies drop constraint FK_movie;
+INSERT INTO theaters (theater_id) VALUES (1);
+INSERT INTO theaters (theater_id) VALUES (2);
+INSERT INTO theaters (theater_id) VALUES (3);
+INSERT INTO theaters (theater_id) VALUES (4);
+
+
+--_______________
+--Showtimes Data
+--_______________
+
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (1, 1, '11:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (1, 1, '07:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '11:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '07:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '11:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '07:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (6, 4, '11:00:00');
+INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (6, 4, '07:00:00');
+
+SELECT * FROM showtimes WHERE movie_id = 1;
+
+
+
+
+
+
+
+
+
+
+
+
