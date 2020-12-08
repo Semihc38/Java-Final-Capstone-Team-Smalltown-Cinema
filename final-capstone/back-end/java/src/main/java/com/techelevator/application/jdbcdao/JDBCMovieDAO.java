@@ -39,7 +39,18 @@ public class JDBCMovieDAO implements MovieDAO {
 		return movies;
 	}
 	
-	
+	@Override
+	public Movie getChosenMovie(Integer id) {
+		String query = "SELECT * FROM movies WHERE movie_id = ?";
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id);
+		
+		Movie movie = new Movie();
+		if(rowSet.next()) {
+			movie = mapRowToMovie(rowSet);
+		}
+		
+		return movie;
+	}
 	
 	
 	
@@ -55,4 +66,6 @@ public class JDBCMovieDAO implements MovieDAO {
 
 		return movie;
 	}
+
+	
 }

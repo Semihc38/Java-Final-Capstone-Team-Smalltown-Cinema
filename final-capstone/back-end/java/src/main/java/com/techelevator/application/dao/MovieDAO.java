@@ -8,4 +8,9 @@ public interface MovieDAO {
 
 	
 	public List<Movie> getAllFeaturedMovies();
+	
+	public Movie getChosenMovie(Integer id);
 }
+
+
+
