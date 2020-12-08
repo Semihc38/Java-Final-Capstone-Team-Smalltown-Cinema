@@ -1,8 +1,12 @@
 <template>
     <div class="movie-card">
-        <h1 class ="movie-title">{{this.movie.title}}</h1>
-        <img class ="movie-poster" v-if="movie.poster" v-bind:src="movie.poster" />
-      
+        <router-link v-bind:to="{ path: '/showtimes/' + this.movie.movieId }">
+        <h1 class ="movie-title" >{{this.movie.title}}</h1>
+        </router-link>
+        
+        <router-link class="movie-title" v-bind:to="{ path: '/showtimes/' + this.movie.movieId }">
+        <img class ="movie-poster"  v-if="movie.poster" v-bind:src="movie.poster" />
+        </router-link>
         
     </div>
 </template>

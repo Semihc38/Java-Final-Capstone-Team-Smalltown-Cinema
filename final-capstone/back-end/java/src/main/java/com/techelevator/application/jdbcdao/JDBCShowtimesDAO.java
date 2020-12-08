@@ -22,7 +22,10 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 	
 	@Override
 	public List<Showtimes> getShowtimesByMovieId(int id) {
-		String query = "SELECT * FROM showtimes WHERE movie_id = ?";
+		String query = "SELECT * FROM showtimes WHERE showtimes.movie_id = ?";
+
+		
+		
 		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id);
 		
 		List<Showtimes> showtimes = new ArrayList<>();

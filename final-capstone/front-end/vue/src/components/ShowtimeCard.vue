@@ -1,6 +1,8 @@
 <template>
     <div class="showtime-card">
         <h1 class ="start-time">{{this.showtime.startTime}}</h1>
+      
+
         
       
         

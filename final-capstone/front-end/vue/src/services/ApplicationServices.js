@@ -14,5 +14,9 @@ export default{
     },
     getShowtimesByMovieId(id){
         return http.get(`/showtimes/${id}`);
+    },
+    getChosenMovie(id){
+        return http.get(`/featuredMovies/${id}`);
     }
+
 }

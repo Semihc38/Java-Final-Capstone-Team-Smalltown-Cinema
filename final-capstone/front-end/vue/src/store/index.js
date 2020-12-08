@@ -28,12 +28,7 @@ export default new Vuex.Store({
     user: currentUser || {}
   },
   mutations: {
-    SET_CHOSEN_MOVIE(state, data){
-      state.chosenMovie = data;
-    },
-    SET_FEATURED_MOVIES(state, data){
-      state.movies = data;
-    },
+    
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
       localStorage.setItem('token', token);
