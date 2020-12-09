@@ -17,6 +17,9 @@ export default {
 </script>
 <style>
 .heading{
-  color: black;
+  color: #EAEAEA;
+}
+#nav{
+  background-color: #ad974f;
 }
 </style>
