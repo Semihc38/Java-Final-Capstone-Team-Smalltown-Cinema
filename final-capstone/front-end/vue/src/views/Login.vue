@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Welcome to Small Town Cinemas</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -103,6 +103,7 @@ color: #EAEAEA;
   margin: auto;
   background-image: url('../assets/fancy-image.jpg');
   background-size: 100%;
+  margin-top: 10%;
 }
 
 h1{
@@ -132,12 +133,12 @@ h1{
 }
 
 #username{
-border: 2px solid #AD974F;
+margin-left: 1%;
 border-radius: 5px;
 }
 
 #password{
-border: 2px solid #AD974F;
+margin-left: 1%;
 border-radius: 5px;
 }
 
