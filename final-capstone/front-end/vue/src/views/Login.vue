@@ -12,6 +12,8 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
+
+      <div id="username-div">
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -22,6 +24,8 @@
         required
         autofocus
       />
+      </div>
+      <div id="password-div">
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -31,8 +35,15 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      </div>
+       <div id="sign-in">
       <button type="submit">Sign in</button>
+      </div>
+      <div id="register">
+      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      </div>
+
+      
     </form>
   </div>
 </template>
@@ -74,3 +85,80 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.alert-danger{
+color: #EAEAEA;
+}
+
+.alert-success{
+  color: #EAEAEA;
+}
+
+#login{
+  background-color: #8E793E;
+  padding-bottom: 20px;
+  color: #EAEAEA;
+  max-width: 50%;
+  margin: auto;
+  background-image: url('../assets/fancy-image.jpg');
+  background-size: 100%;
+}
+
+h1{
+  background-color: #231F20;
+  max-width: 60%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+  color: #8E793E;
+  margin-bottom: 20px;
+}
+
+#username-div{
+  background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+#password-div{
+  background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#username{
+border: 2px solid #AD974F;
+border-radius: 5px;
+}
+
+#password{
+border: 2px solid #AD974F;
+border-radius: 5px;
+}
+
+#register{
+ background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px; 
+}
+#sign-in{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a{
+  color: #EAEAEA;
+}
+
+.form-control{
+  background-color: white;
+}
+
+</style>
