@@ -1,10 +1,6 @@
 <template>
     <div class="showtime-card">
         <h1 class ="start-time">{{this.showtime.startTime}}&nbsp;&nbsp;</h1>
-      
-
-        
-      
         
     </div>
 </template>
@@ -15,6 +11,10 @@ export default {
 }
 </script>
 <style>
+.showtime-card{
+border: 5px double black;
+max-width:40%;
+margin: auto;
 
-
+}
 </style>
