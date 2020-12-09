@@ -1,6 +1,6 @@
 <template>
     <div class="showtime-card">
-        <h1 class ="start-time">{{this.showtime.startTime}}</h1>
+        <h1 class ="start-time">{{this.showtime.startTime}}&nbsp;&nbsp;</h1>
       
 
         
@@ -15,20 +15,6 @@ export default {
 }
 </script>
 <style>
-.movie-title{
-    font-size: 1.5vw;
-    height: 10%;
-}
-.movie-poster{
-    max-width: 75%;
-    max-height: auto;
-    margin-top: 10px;
 
-}
-.movie-card{
 
-    max-width: 22%;
-    max-height: auto;
-    margin: 20px;
-}
 </style>

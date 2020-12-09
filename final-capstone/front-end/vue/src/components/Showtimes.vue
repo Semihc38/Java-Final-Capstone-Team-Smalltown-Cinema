@@ -1,12 +1,12 @@
 <template>
 
     <div class = "showtimes-container">
-        <h1 class="movie-title">{{this.movie.title}}</h1>
+        <h1 class="showtime-movie-title">{{this.movie.title}}</h1>
         <div class="times">
             <showtime-card class ="start-time" v-for="showtime in showtimes" v-bind:key="showtime.showtimeId" v-bind:showtime="showtime" />
         </div>
         <div class="poster-overview">
-        <img class ="movie-poster" v-bind:src="movie.poster" />
+        <img class ="showtime-movie-poster" v-bind:src="movie.poster" />
         <p class="movie-overview">{{this.movie.overview}}</p>
         </div>
 
@@ -56,7 +56,7 @@ export default {
 .movie-overview{
     color: #231F20;
     padding: 5%;
-    max-width: 30%;
+    max-width: 40%;
     padding-left: 10%;
     text-align: left;
     line-height: 30px;
@@ -67,6 +67,23 @@ export default {
 
 .times{
     background-color: #AD974F;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+img.showtime-movie-poster{
+  width: 20%;
+  height: auto;
+  padding-left: 75px;
+  padding-bottom: 50px;
+  padding-top: 25px;
+}
+
+h1.showtime-movie-title{
+font-size: 40px;
+padding-top: 20px;
 }
 
 </style>
