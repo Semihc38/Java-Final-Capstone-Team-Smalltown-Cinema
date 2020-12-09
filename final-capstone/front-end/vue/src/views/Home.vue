@@ -24,7 +24,5 @@ export default {
 .home{
   background-color: #EAEAEA;
 }
-.featured-movies{
- color:black;
-}
+
 </style>

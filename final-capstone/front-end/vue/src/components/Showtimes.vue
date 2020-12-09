@@ -47,20 +47,7 @@ export default {
 </script>
 
 <style>
-img{
-    display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    background: #EAEAEA;
-    justify-content: left;
-}
-.movie-poster{
-    display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    background: #EAEAEA;
-    justify-content: right;
-}
+
 .poster-overview{
     display: flex;
     flex-direction: row;
@@ -77,15 +64,9 @@ img{
 .showtimes-container{
     background-color: #EAEAEA;
 }
-.movie-title{
-    font-size: 50px;
-    color: #AD974F;
-}
+
 .times{
     background-color: #AD974F;
 }
-.movie-poster{
-    padding-bottom: 5%;
-    padding-left: 5%;
-}
+
 </style>
