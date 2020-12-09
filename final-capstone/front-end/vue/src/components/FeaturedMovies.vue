@@ -34,5 +34,7 @@ export default {
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background: #EAEAEA;
 }
+
 </style>

@@ -1,9 +1,11 @@
 <template>
+<div class="background">
   <div class="home">
     <h1 class="heading">Welcome to Small Town Cinema</h1>
     <h1 class="featured-movies">Featured Movies</h1>
     <featured-movies />
   </div>
+</div>
 </template>
 
 <script>
@@ -17,9 +19,10 @@ export default {
 </script>
 <style>
 .heading{
-  color: black;
+  color: #EAEAEA;
 }
-.featured-movies{
-  color:black;
+.home{
+  background-color: #EAEAEA;
 }
+
 </style>

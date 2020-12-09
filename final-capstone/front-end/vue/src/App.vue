@@ -9,7 +9,8 @@
 </template>
 <style>
 html{
-    background-color: black;
+  background-color: #231f20; 
+
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -18,7 +19,9 @@ html{
   text-align: center;
   color: #2c3e50;
   margin: 50px;
-  background-color: white;
+  /* background-color: #231f20; */
   padding-bottom: 200px;
+
 }
+
 </style>
