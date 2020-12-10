@@ -6,28 +6,30 @@ public class Showtimes {
 	private int movieId;
 	private int theaterId;
 	private String startTime;
-	private String dayOfWeek;
+	private String dayofweek;
 	
 	public Showtimes() {
 	}
 
-	public Showtimes(int showtimeId, int movieId, int theaterId, String startTime, String dayOfWeek) {
+	public Showtimes(int showtimeId, int movieId, int theaterId, String startTime, String dayofweek) {
 	
 		this.showtimeId = showtimeId;
 		this.movieId = movieId;
 		this.theaterId = theaterId;
 		this.startTime = startTime;
-		this.dayOfWeek = dayOfWeek;
+		this.dayofweek = dayofweek;
 	
 	
 	
 	}
-	public String getDayOfWeek() {
-		return dayOfWeek;
+	
+
+	public String getDayofweek() {
+		return dayofweek;
 	}
 
-	public void setDayOfWeek(String dayOfWeek) {
-		this.dayOfWeek = dayOfWeek;
+	public void setDayofweek(String dayofweek) {
+		this.dayofweek = dayofweek;
 	}
 
 	public int getShowtimeId() {
