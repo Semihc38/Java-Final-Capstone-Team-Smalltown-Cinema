@@ -2,6 +2,15 @@
 
     <div class = "showtimes-container">
         <h1 class="showtime-movie-title">{{this.movie.title}}</h1>
+        <div>            
+            <button v-on:click="getSelectedShowtimes('Monday')">Monday</button>
+            <button v-on:click="getSelectedShowtimes('Tuesday')">Tuesday</button>
+            <button v-on:click="getSelectedShowtimes('Wednesday')">Wednesday</button>
+            <button v-on:click="getSelectedShowtimes('Thursday')">Thursday</button>
+            <button v-on:click="getSelectedShowtimes('Friday')">Friday</button>
+            <button v-on:click="getSelectedShowtimes('Saturday')">Saturday</button>
+            <button v-on:click="getSelectedShowtimes('Sunday')">Sunday</button>
+            </div>
         <div class= "times-containter">
 
             <div class="times">
@@ -25,27 +34,37 @@ export default {
     components: {
         ShowtimeCard,
         
+        
     },
     name:'showtimes',
     data(){
         return {
             movie: [],
             showtimes: []
+            
         }
     },
     methods:{
-    
-    },
-    created(){
-        applicationServices.getShowtimesByMovieId(this.$route.params.id).then(response =>{
+        getSelectedShowtimes(day){
+            return applicationServices.getShowtimesByMovieIdAndDayOfWeek(this.$route.params.id, day).then(response =>{
             this.showtimes = response.data;
         });
+        }
+    },
+    created(){
+        //applicationServices.getShowtimesByMovieId(this.$route.params.id).then(response =>{
+        //    this.showtimes = response.data;
+        //});
 
         applicationServices.getChosenMovie(this.$route.params.id).then(response => {
             this.movie = response.data;
         });
 
-        applicationServices.getShowtimesByMovieIdAndDayOfWeek(this.$route.params.id, "Monday")
+        //applicationServices.getShowtimesByMovieIdAndDayOfWeek(this.$route.params.id, "Monday").then(response =>{
+        //    this.showtimes = response.data;
+
+        //});
+        this.getSelectedShowtimes();
 
     }
 }

@@ -1,16 +1,20 @@
 <template>
   <div class="showtimes">
+
     <h1 class="heading">Showtimes</h1>
     <showtimes />
+    <drop-down/>
   </div>
 </template>
 
 <script>
 import Showtimes from '../components/Showtimes.vue';
+import DropDown from '../components/DropDown.vue';
 export default {
   name: 'showtimes-page',
   components:{
-    Showtimes
+    Showtimes,
+    DropDown
   },
 };
 
