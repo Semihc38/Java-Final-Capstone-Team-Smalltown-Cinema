@@ -6,5 +6,7 @@ import com.techelevator.application.model.Showtimes;
 
 public interface ShowtimesDAO {
 
-	public List<Showtimes> getShowtimesByMovieId(int id,String dayofweek);
+	public List<Showtimes> getShowtimesByMovieId(int id);
+	
+	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(int id, String dayofweek);
 }

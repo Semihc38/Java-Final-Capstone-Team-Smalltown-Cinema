@@ -3,6 +3,7 @@
     <div class = "showtimes-container">
         <h1 class="showtime-movie-title">{{this.movie.title}}</h1>
         <div class= "times-containter">
+
             <div class="times">
                 <showtime-card class ="start-time" v-for="showtime in showtimes" v-bind:key="showtime.showtimeId" v-bind:showtime="showtime" />
             </div>
@@ -43,7 +44,9 @@ export default {
         applicationServices.getChosenMovie(this.$route.params.id).then(response => {
             this.movie = response.data;
         });
-        
+
+        applicationServices.getShowtimesByMovieIdAndDayOfWeek(this.$route.params.id, "Monday")
+
     }
 }
 </script>

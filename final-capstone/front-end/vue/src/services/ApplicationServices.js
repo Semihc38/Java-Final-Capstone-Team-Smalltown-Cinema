@@ -17,6 +17,9 @@ export default{
     },
     getChosenMovie(id){
         return http.get(`/featuredMovies/${id}`);
+    },
+    getShowtimesByMovieIdAndDayOfWeek(id, dayofweek){
+        return http.get(`/showtimes/${id}/${dayofweek}`);
     }
 
 }

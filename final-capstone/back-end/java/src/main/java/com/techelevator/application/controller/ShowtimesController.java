@@ -21,8 +21,13 @@ public class ShowtimesController {
 		this.showtimesDao=showtimesDao;
 	}
 	
-	@RequestMapping(path = "/showtimes/{id}&{dayofweek}", method = RequestMethod.GET)
-	public List<Showtimes> getShowtimesByMovieId(@PathVariable int id, @PathVariable String dayofweek){
-		return showtimesDao.getShowtimesByMovieId(id, dayofweek); 
+	@RequestMapping(path = "/showtimes/{id}", method = RequestMethod.GET)
+	public List<Showtimes> getShowtimesByMovieId(@PathVariable int id){
+		return showtimesDao.getShowtimesByMovieId(id); 
+	}
+	
+	@RequestMapping(path = "/showtimes/{id}/{dayofweek}", method = RequestMethod.GET)
+	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(@PathVariable int id, @PathVariable String dayofweek){
+		return showtimesDao.getShowtimesByMovieIdAndDayOfWeek(id, dayofweek); 
 	}
 }

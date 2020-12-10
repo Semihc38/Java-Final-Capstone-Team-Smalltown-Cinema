@@ -21,7 +21,25 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 	}
 	
 	@Override
-	public List<Showtimes> getShowtimesByMovieId(int id, String dayofweek) {
+	public List<Showtimes> getShowtimesByMovieId(int id) {
+		String query = "SELECT * FROM showtimes WHERE movie_id = ?";
+
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id);
+		
+		List<Showtimes> showtimes = new ArrayList<>();
+		
+		while (rowSet.next()) {
+			Showtimes showtime = mapRowToShowtimes(rowSet);
+			showtimes.add(showtime);
+		}
+		
+		return showtimes;
+		
+		
+	}
+	
+	@Override
+	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(int id, String dayofweek) {
 		String query = "SELECT * FROM showtimes WHERE movie_id = ? AND dayofweek = ?";
 
 		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id, dayofweek);
