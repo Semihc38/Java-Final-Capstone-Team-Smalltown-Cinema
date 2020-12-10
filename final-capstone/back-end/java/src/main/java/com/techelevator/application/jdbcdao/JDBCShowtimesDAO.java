@@ -22,7 +22,7 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 	
 	@Override
 	public List<Showtimes> getShowtimesByMovieId(int id) {
-		String query = "SELECT * FROM showtimes WHERE showtimes.movie_id = ?";
+		String query = "SELECT * FROM showtimes WHERE movie_id = ?";
 
 		
 		
@@ -47,6 +47,7 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 		showtimes.setMovieId(rowset.getInt("movie_id"));
 		showtimes.setTheaterId(rowset.getInt("theater_id"));
 		showtimes.setStartTime(rowset.getString("start_time"));
+		showtimes.setDayOfWeek(rowset.getString("dayOfWeek"));
 
 		return showtimes;
 	}

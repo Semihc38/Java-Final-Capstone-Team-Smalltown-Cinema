@@ -83,6 +83,7 @@ CREATE SEQUENCE seq_theater_id
   NO MAXVALUE
   NO MINVALUE
   CACHE 1;
+  
 
 --Table Creation--
 
@@ -97,6 +98,7 @@ showtime_id int DEFAULT nextval('seq_showtime_id'::regclass) NOT NULL,
 movie_id int NOT NULL,
 theater_id int NOT NULL,
 start_time varchar(50) NOT NULL,
+dayOfWeek varchar(50) NOT NULL,
 CONSTRAINT PK_showtime PRIMARY KEY (showtime_id)
 );
 
@@ -109,15 +111,71 @@ INSERT INTO theaters (theater_id) VALUES (3);
 INSERT INTO theaters (theater_id) VALUES (4);
 
 
---_______________
 --Showtimes Data
---_______________
 
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (1, 1, '11:00 AM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (1, 1, '7:00 PM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '11:00 AM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (2, 2, '7:00 PM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '11:00 AM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (3, 3, '7:00 PM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (4, 4, '11:00 AM');
-INSERT INTO showtimes (movie_id, theater_id, start_time) VALUES (4, 4, '7:00 PM');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '11:00 AM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '7:00 PM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '11:00 AM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '7:00 PM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '11:00 AM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '7:00 PM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '11:00 AM', 'Monday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '7:00 PM', 'Monday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '11:15 AM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '7:15 PM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '11:15 AM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '7:15 PM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '11:15 AM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '7:15 PM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '11:15 AM', 'Tuesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '7:15 PM', 'Tuesday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '11:30 AM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '7:30 PM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '11:30 AM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '7:30 PM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '11:30 AM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '7:30 PM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '11:30 AM', 'Wednesday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '7:30 PM', 'Wednesday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '11:45 AM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '7:45 PM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '11:45 AM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '7:45 PM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '11:45 AM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '7:45 PM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '11:45 AM', 'Thursday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '7:45 PM', 'Thursday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '10:00 AM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '8:00 PM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '10:00 AM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '8:00 PM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '10:00 AM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '8:00 PM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '10:00 AM', 'Friday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '8:00 PM', 'Friday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '10:15 AM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '8:15 PM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '10:15 AM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '8:15 PM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '10:15 AM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '8:15 PM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '10:15 AM', 'Saturday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '8:15 PM', 'Saturday');
+
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '10:30 AM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (1, 1, '8:30 PM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '10:30 AM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (2, 2, '8:30 PM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '10:30 AM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (3, 3, '8:30 PM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '10:30 AM', 'Sunday');
+INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4, '8:30 PM', 'Sunday');
+
+
+--Showtimes By Day Table--
+        
