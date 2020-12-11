@@ -39,18 +39,14 @@ public class JDBCSeatDAO implements SeatDAO{
 	}
 	}
 	
+	
 	@Override
 	public void bookSeat(int showtimeId, String seatName) {
-		String query = "SELECT * FROM seats WHERE showtime_id = ? AND seat_name = ?";
-		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, showtimeId, seatName);
-		Seat seat = mapRowToSeat(rowSet);
-		
-		if(seat.isBooked() == false)	{
-			seat.setBooked(true);
-			String query2 = "UPDATE seats SET is_booked = true WHERE showtime_id = ? AND seat_name = ?";
-			jdbcTemplate.update(query2, showtimeId, seatName);
+			String query = "UPDATE seats SET is_booked = true WHERE showtime_id = ? AND seat_name = ?";
+			jdbcTemplate.update(query, showtimeId, seatName);
+			
 		}
-	}
+	
 	
 	@Override
 	public List<Seat> getSeatByShowtime(int showtimeId) {
