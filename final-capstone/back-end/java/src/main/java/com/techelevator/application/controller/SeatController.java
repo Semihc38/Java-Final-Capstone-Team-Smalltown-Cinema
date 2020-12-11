@@ -1,11 +1,15 @@
 package com.techelevator.application.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.application.dao.SeatDAO;
+import com.techelevator.application.model.Seat;
 
 @RestController
 @CrossOrigin
@@ -22,4 +26,8 @@ public class SeatController {
 		seatDao.generateSeats();
 	}
 
+	@RequestMapping(path="/seats/{id}", method=RequestMethod.GET)
+	public List<Seat> getSeatsByShowtimeId(@PathVariable int id){
+		return seatDao.getSeatByShowtime(id);
+	}
 }

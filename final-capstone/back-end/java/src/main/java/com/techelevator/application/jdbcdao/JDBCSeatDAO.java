@@ -1,8 +1,12 @@
 package com.techelevator.application.jdbcdao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.application.dao.SeatDAO;
@@ -35,8 +39,36 @@ public class JDBCSeatDAO implements SeatDAO{
 	}
 	}
 	
+	@Override
+	public List<Seat> getSeatByShowtime(int showtimeId) {
+		String query = "SELECT * FROM seats WHERE showtime_id = ?";
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, showtimeId);
+		
+		List<Seat> seats = new ArrayList<>();
+		
+		while(rowSet.next()) {
+			Seat seat = mapRowToSeat(rowSet);
+			seats.add(seat);
+		}
+		return seats;
+	}
+
+	
 	private char getLetterFromNum(int num) {
 		return (char) (num+'A'-1);
 	}
 
+private Seat mapRowToSeat(SqlRowSet rowSet) {
+	Seat seat = new Seat();
+	
+	seat.setName(rowSet.getString("seat_name"));
+	seat.setShowtimeId(rowSet.getInt("showtime_id"));
+	seat.setBooked(rowSet.getBoolean("is_booked"));
+	
+	return seat;
+}
+
+
+
+	
 }
