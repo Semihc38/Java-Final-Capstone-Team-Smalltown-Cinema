@@ -1,10 +1,12 @@
 DROP TABLE IF EXISTS movies CASCADE;
 DROP TABLE IF EXISTS showtimes CASCADE;
 DROP TABLE IF EXISTS theaters CASCADE;
+DROP TABLE IF EXISTS seats CASCADE;
 
 DROP SEQUENCE IF EXISTS seq_movie_id;
 DROP SEQUENCE IF EXISTS seq_showtime_id;
 DROP SEQUENCE IF EXISTS seq_theater_id;
+DROP SEQUENCE IF EXISTS seq_seat_id;
 
 --Beginning of Movie Table--
 
@@ -84,6 +86,8 @@ CREATE SEQUENCE seq_theater_id
   NO MINVALUE
   CACHE 1;
   
+  
+
 
 --Table Creation--
 
@@ -179,3 +183,21 @@ INSERT INTO showtimes (movie_id, theater_id, start_time, dayOfWeek) VALUES (4, 4
 
 --Showtimes By Day Table--
         
+CREATE SEQUENCE seq_seat_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;  
+  
+CREATE TABLE seats(
+seat_id int DEFAULT nextval('seq_seat_id'::regclass) NOT NULL,
+seat_name varchar (50) NOT NULL,
+showtime_id int NOT NULL,
+is_booked boolean,
+CONSTRAINT PK_seats PRIMARY KEY(seat_id),
+CONSTRAINT FK_showtime FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
+)
+
+
+
+
