@@ -40,6 +40,19 @@ public class JDBCSeatDAO implements SeatDAO{
 	}
 	
 	@Override
+	public void bookSeat(int showtimeId, String seatName) {
+		String query = "SELECT * FROM seats WHERE showtime_id = ? AND seat_name = ?";
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, showtimeId, seatName);
+		Seat seat = mapRowToSeat(rowSet);
+		
+		if(seat.isBooked() == false)	{
+			seat.setBooked(true);
+			String query2 = "UPDATE seats SET is_booked = true WHERE showtime_id = ? AND seat_name = ?";
+			jdbcTemplate.update(query2, showtimeId, seatName);
+		}
+	}
+	
+	@Override
 	public List<Seat> getSeatByShowtime(int showtimeId) {
 		String query = "SELECT * FROM seats WHERE showtime_id = ?";
 		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, showtimeId);
@@ -52,11 +65,13 @@ public class JDBCSeatDAO implements SeatDAO{
 		}
 		return seats;
 	}
+	
 
 	
 	private char getLetterFromNum(int num) {
 		return (char) (num+'A'-1);
 	}
+	
 
 private Seat mapRowToSeat(SqlRowSet rowSet) {
 	Seat seat = new Seat();
@@ -64,10 +79,9 @@ private Seat mapRowToSeat(SqlRowSet rowSet) {
 	seat.setName(rowSet.getString("seat_name"));
 	seat.setShowtimeId(rowSet.getInt("showtime_id"));
 	seat.setBooked(rowSet.getBoolean("is_booked"));
-	
+
 	return seat;
 }
-
 
 
 	

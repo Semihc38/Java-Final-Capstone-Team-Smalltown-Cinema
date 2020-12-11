@@ -5,7 +5,8 @@ public class Seat {
 	public String name;
 	boolean isBooked;
 	int showtimeId;
-	
+
+
 	public Seat() {
 		
 	}

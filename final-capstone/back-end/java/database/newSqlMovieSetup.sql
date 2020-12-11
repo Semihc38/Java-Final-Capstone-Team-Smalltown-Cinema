@@ -196,8 +196,4 @@ showtime_id int NOT NULL,
 is_booked boolean,
 CONSTRAINT PK_seats PRIMARY KEY(seat_id),
 CONSTRAINT FK_showtime FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
-)
-
-
-
-
+);
