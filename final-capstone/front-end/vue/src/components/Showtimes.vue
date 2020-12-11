@@ -2,16 +2,16 @@
 
     <div class = "showtimes-container">
         <h1 class="showtime-movie-title">{{this.movie.title}}</h1>
-        <div>            
-            <button v-on:click="getSelectedShowtimes('Monday')">Monday</button>
-            <button v-on:click="getSelectedShowtimes('Tuesday')">Tuesday</button>
-            <button v-on:click="getSelectedShowtimes('Wednesday')">Wednesday</button>
-            <button v-on:click="getSelectedShowtimes('Thursday')">Thursday</button>
-            <button v-on:click="getSelectedShowtimes('Friday')">Friday</button>
-            <button v-on:click="getSelectedShowtimes('Saturday')">Saturday</button>
-            <button v-on:click="getSelectedShowtimes('Sunday')">Sunday</button>
-            </div>
-        <div class= "times-containter">
+        <div class='buttons-container time-by-day'>            
+            <button class='buttons' v-on:click="getSelectedShowtimes('Monday')">Monday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Tuesday')">Tuesday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Wednesday')">Wednesday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Thursday')">Thursday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Friday')">Friday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Saturday')">Saturday</button>
+            <button class='buttons' v-on:click="getSelectedShowtimes('Sunday')">Sunday</button>
+        </div>
+        <div class= "times-container time-by-day">
 
             <div class="times">
                 <showtime-card class ="start-time" v-for="showtime in showtimes" v-bind:key="showtime.showtimeId" v-bind:showtime="showtime" />
@@ -106,18 +106,17 @@ export default {
     font-family: 'Open Sans', 'Regular';
     border: 5px double #231f20;
     color: #231f20;
-
+    font-size: 10px;
     
 }
 
 img.showtime-movie-poster{
     max-width: 25%;
-    max-height: auto;
+    height: auto;
     padding-left: 10%;
     padding-bottom: 5%;
     padding-top: 5%;
-    display:flex;
-    flex-wrap: wrap;
+   
 
 }
 h1.showtime-movie-title{
@@ -130,10 +129,28 @@ margin: auto;
 margin-bottom: 5%;
 padding-bottom: 1%;
 }
-.times-containter{
-    max-width: 100%;
+
+img{
+    
+}
+.times-container{
+    margin: auto;
     display: flex;
     justify-content: center;
 }
+.buttons:hover{
+    background-color: #AD974F;
+    border: 5px double #231F20;
+}
+.buttons{
+    border: 5px double #AD974F;
+    background-color: #231F20;
+    color: #EAEAEA;
+    font-family: 'Limelight', cursive;
 
+}
+.times-by-day{
+    max-width: 50%;
+    margin: auto;
+}
 </style>

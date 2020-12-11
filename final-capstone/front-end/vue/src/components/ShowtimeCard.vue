@@ -12,9 +12,9 @@ export default {
 </script>
 <style>
 .showtime-card{
-border: 5px double black;
+
 max-width:40%;
 margin: auto;
-
 }
+
 </style>
