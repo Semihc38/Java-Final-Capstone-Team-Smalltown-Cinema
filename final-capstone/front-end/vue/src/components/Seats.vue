@@ -28,7 +28,7 @@ export default {
         }
     },
     methods:{
-      
+    
         
     },
     created(){
@@ -39,3 +39,17 @@ export default {
     }
 }
 </script>
+
+<style>
+
+.seats-container {
+    width: 50%;
+    margin: auto;
+    row-gap: 10%;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    
+    justify-content: center;
+    flex-wrap: wrap;
+}
+</style>
