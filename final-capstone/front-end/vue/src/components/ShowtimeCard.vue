@@ -1,6 +1,8 @@
 <template>
     <div class="showtime-card">
-        <h1 class ="start-time">{{this.showtime.startTime}}&nbsp;&nbsp;</h1>
+        <router-link v-bind:to="{ path: '/seats/' + this.showtime.showtimeId }">
+        <h1 class ="start-time">{{this.showtime.startTime}}</h1>
+        </router-link>
         
     </div>
 </template>
