@@ -1,17 +1,18 @@
 <template>
-  <div class="showtimes">
+  <div class="seats">
 
-    <h1 class="heading">Showtimes</h1>
-    <showtimes />
+    <h1 class="heading">Seats</h1>
+    <seats />
+   
   </div>
 </template>
 
 <script>
-import Showtimes from '../components/Showtimes.vue';
+import Seats from '../components/Seats.vue';
 export default {
   name: 'showtimes-page',
   components:{
-    Showtimes
+    Seats
   },
 };
 

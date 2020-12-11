@@ -20,6 +20,13 @@ export default{
     },
     getShowtimesByMovieIdAndDayOfWeek(id, dayofweek){
         return http.get(`/showtimes/${id}/${dayofweek}`);
+    },
+    bookSeatByShowtimeIdAndSeatName(id, seatName){
+        return http.put(`/bookSeat/${id}/${seatName}`);
+    },
+    getSeatsByShowtimeId(id){
+        return http.get(`/seats/${id}`);
+        
     }
 
 }
