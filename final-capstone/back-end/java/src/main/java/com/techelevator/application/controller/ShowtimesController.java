@@ -30,4 +30,6 @@ public class ShowtimesController {
 	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(@PathVariable int id, @PathVariable String dayofweek){
 		return showtimesDao.getShowtimesByMovieIdAndDayOfWeek(id, dayofweek); 
 	}
+	
+	
 }

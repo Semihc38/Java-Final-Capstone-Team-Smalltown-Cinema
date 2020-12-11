@@ -38,6 +38,7 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 		
 	}
 	
+	
 	@Override
 	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(int id, String dayofweek) {
 		String query = "SELECT * FROM showtimes WHERE movie_id = ? AND dayofweek = ?";
