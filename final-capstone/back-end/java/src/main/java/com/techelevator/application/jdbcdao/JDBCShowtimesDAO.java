@@ -66,6 +66,7 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 		showtimes.setTheaterId(rowset.getInt("theater_id"));
 		showtimes.setStartTime(rowset.getString("start_time"));
 		showtimes.setDayofweek(rowset.getString("dayofweek"));
+		showtimes.setMatinee(rowset.getBoolean("matinee"));
 
 		return showtimes;
 	}

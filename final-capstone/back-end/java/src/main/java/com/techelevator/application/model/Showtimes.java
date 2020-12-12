@@ -7,22 +7,32 @@ public class Showtimes {
 	private int theaterId;
 	private String startTime;
 	private String dayofweek;
+	private boolean matinee;
 	
 	public Showtimes() {
 	}
 
-	public Showtimes(int showtimeId, int movieId, int theaterId, String startTime, String dayofweek) {
+	public Showtimes(int showtimeId, int movieId, int theaterId, String startTime, String dayofweek, boolean matinee) {
 	
 		this.showtimeId = showtimeId;
 		this.movieId = movieId;
 		this.theaterId = theaterId;
 		this.startTime = startTime;
 		this.dayofweek = dayofweek;
+		this.matinee = matinee;
 	
 	
 	
 	}
 	
+
+	public boolean isMatinee() {
+		return matinee;
+	}
+
+	public void setMatinee(boolean matinee) {
+		this.matinee = matinee;
+	}
 
 	public String getDayofweek() {
 		return dayofweek;
