@@ -1,11 +1,6 @@
 <template>
-<div class="seat-tickets">
     <div class="seats-container">
         <seat-card v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
-    </div>
-    <div class="tickets">
-        <tickets />
-    </div>
 </div>
 
     
@@ -14,14 +9,10 @@
 <script>
 import applicationServices from '@/services/ApplicationServices.js'
 import SeatCard from './SeatCard.vue'
-import Tickets from './Tickets.vue'
 
 export default {
     components: {
-        SeatCard,
-        Tickets
-        
-        
+        SeatCard
     },
     name:'seats',
     data(){
@@ -56,11 +47,5 @@ export default {
     
     justify-content: center;
     flex-wrap: wrap;
-}
-.seats-tickets{
-    display: grid;
-    grid-template-columns: 2fr, 1fr;
-    grid-template-areas: 'seats-container tickets';
-    
 }
 </style>

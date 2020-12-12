@@ -1,18 +1,25 @@
 <template>
-  <div class="seats">
-
+  <div>
     <h1 class="heading">Seats</h1>
-    <seats />
-   
+    <div class="seats-tickets">
+      <div class="seats">
+        <seats />
+      </div>
+      <div class="tickets">
+        <tickets />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Seats from '../components/Seats.vue';
+import Tickets from '../components/Tickets.vue';
 export default {
   name: 'showtimes-page',
   components:{
-    Seats
+    Seats,
+    Tickets
   },
 };
 
@@ -28,6 +35,13 @@ export default {
 }
 #nav{
   background-color: #AD974F;
+}
+.seats-tickets{
+    display: grid;
+    grid-template-columns: 2fr, 1fr;
+    grid-template-areas: 'heading heading'
+    'seats-container tickets';
+    
 }
 
 </style>
