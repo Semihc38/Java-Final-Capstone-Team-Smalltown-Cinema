@@ -26,7 +26,6 @@ export default{
     },
     getSeatsByShowtimeId(id){
         return http.get(`/seats/${id}`);
-        
     }
 
 }

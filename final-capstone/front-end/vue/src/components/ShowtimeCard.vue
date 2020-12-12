@@ -3,7 +3,6 @@
         <router-link v-bind:to="{ path: '/seats/' + this.showtime.showtimeId }">
         <h1 class ="start-time">{{this.showtime.startTime}}</h1>
         </router-link>
-        
     </div>
 </template>
 <script>

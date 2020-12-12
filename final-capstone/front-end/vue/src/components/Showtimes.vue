@@ -3,13 +3,13 @@
     <div class = "showtimes-container">
         <h1 class="showtime-movie-title">{{this.movie.title}}</h1>
         <div class='buttons-container time-by-day'>            
-            <button class='buttons' v-on:click="getSelectedShowtimes('Monday')">Monday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Tuesday')">Tuesday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Wednesday')">Wednesday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Thursday')">Thursday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Friday')">Friday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Saturday')">Saturday</button>
-            <button class='buttons' v-on:click="getSelectedShowtimes('Sunday')">Sunday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Monday')">Monday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Tuesday')">Tuesday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Wednesday')">Wednesday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Thursday')">Thursday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Friday')">Friday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Saturday')">Saturday</button>
+            <button class='day-buttons' v-on:click="getSelectedShowtimes('Sunday')">Sunday</button>
         </div>
         <div class= "times-container time-by-day">
 
@@ -33,15 +33,12 @@ import ShowtimeCard from './ShowtimeCard.vue';
 export default {
     components: {
         ShowtimeCard,
-        
-        
     },
     name:'showtimes',
     data(){
         return {
             movie: [],
             showtimes: []
-            
         }
     },
     methods:{
@@ -135,11 +132,11 @@ padding-bottom: 1%;
     display: flex;
     justify-content: center;
 }
-.buttons:hover{
+.day-buttons:hover{
     background-color: #AD974F;
     border: 5px double #231F20;
 }
-.buttons{
+.day-buttons{
     border: 5px double #AD974F;
     background-color: #231F20;
     color: #EAEAEA;
