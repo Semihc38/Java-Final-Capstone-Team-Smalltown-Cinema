@@ -159,7 +159,7 @@ a{
 }
 
 .form-control{
-  background-color: white;
+  background-color: #EAEAEA;
 }
 
 </style>

@@ -9,7 +9,7 @@
 </template>
 <style>
 html{
-  background-color: #231f20; 
+  background-color: #231F20; 
 
 }
 #app {
@@ -17,7 +17,7 @@ html{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #AD974F;
   margin: 50px;
   /* background-color: #231f20; */
   padding-bottom: 200px;

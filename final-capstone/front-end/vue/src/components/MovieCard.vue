@@ -25,7 +25,7 @@ export default {
     max-width: 75%;
     max-height: auto;
     margin-top: 10px;
-    border: 5px double #231f20;
+    border: 5px double #231F20;
 
 }
 .movie-card{

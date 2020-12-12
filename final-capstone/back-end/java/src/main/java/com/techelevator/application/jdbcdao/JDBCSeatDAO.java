@@ -50,7 +50,7 @@ public class JDBCSeatDAO implements SeatDAO{
 	
 	@Override
 	public List<Seat> getSeatByShowtime(int showtimeId) {
-		String query = "SELECT * FROM seats WHERE showtime_id = ?";
+		String query = "SELECT * FROM seats WHERE showtime_id = ? AND is_booked = false";
 		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, showtimeId);
 		
 		List<Seat> seats = new ArrayList<>();

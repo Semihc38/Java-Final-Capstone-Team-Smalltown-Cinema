@@ -27,7 +27,7 @@ export default {
   border: 5px double #AD974F;
 }
 #nav{
-  background-color: #ad974f;
+  background-color: #AD974F;
 }
 
 </style>

@@ -104,8 +104,8 @@ export default {
     flex-direction: row;
     justify-content: center;
     font-family: 'Open Sans', 'Regular';
-    border: 5px double #231f20;
-    color: #231f20;
+    border: 5px double #231F20;
+    color: #231F20;
     font-size: 10px;
     
 }
@@ -130,9 +130,6 @@ margin-bottom: 5%;
 padding-bottom: 1%;
 }
 
-img{
-    
-}
 .times-container{
     margin: auto;
     display: flex;

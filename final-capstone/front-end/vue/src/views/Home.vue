@@ -32,14 +32,14 @@ export default {
   font-family: 'Limelight', cursive;
   margin: auto;
   padding-top: 1%;
-  color: #231f20;
+  color: #231F20;
 }
 .featured-movies{
     width: 50%;
     background-color: #AD974F;
     margin: auto;
     padding: 1%;
-    border: 5px double #231f20;
+    border: 5px double #231F20;
 
 }
 
