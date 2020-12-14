@@ -1,7 +1,7 @@
 <template>
     <div class="seat-ticket-container">
         <div class="seats-container">
-            <seat-card v-on:click="selectSeats()" v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
+            <seat-card v-on:click.native="selectSeats" v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
         </div>
         <div class="tickets-container">
             <h1>Select Tickets</h1>
@@ -108,8 +108,8 @@ export default {
         totalTicketCount() {
             this.totalTickets = this.seniorCount + this.childCount +  this.adultCount;
         },
-        selectSeats(){
-            this.selectedSeats.push(this.seat)
+        selectSeats(event){
+            this.selectedSeats.push(event.target.key);
         }
     },
     created(){

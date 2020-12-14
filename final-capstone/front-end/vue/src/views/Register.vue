@@ -90,4 +90,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#register{
+  background-color: #8E793E;
+  padding-bottom: 20px;
+  color: #EAEAEA;
+  max-width: 50%;
+  margin: auto;
+  background-size: 100%;
+  margin-top: 10%;
+}
+
+</style>

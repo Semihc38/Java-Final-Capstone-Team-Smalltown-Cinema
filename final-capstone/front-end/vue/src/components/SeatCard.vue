@@ -1,10 +1,6 @@
 <template>
     <div class="seat-card">
-        
         <button class ="seat-name" >{{this.seat.name}}</button>
-        
- 
-        
     </div>
 </template>
 
