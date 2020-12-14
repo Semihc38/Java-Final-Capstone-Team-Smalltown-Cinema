@@ -105,6 +105,7 @@ export default {
           decrementSeniorCount(){
             if(this.seniorCount > 0) {
             this.seniorCount -= 1;
+            
             } 
             
         },
