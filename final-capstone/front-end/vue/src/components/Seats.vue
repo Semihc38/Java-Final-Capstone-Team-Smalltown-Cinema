@@ -110,9 +110,16 @@ export default {
             this.totalTickets = this.seniorCount + this.childCount +  this.adultCount;
         },
         selectSeats(seatName){
-            if(this.selectedCount < this.totalTickets){
+            if((this.selectedCount < this.totalTickets) && !this.selectedSeats.includes(seatName)){
                this.selectedSeats.push(seatName);
                this.selectedCount += 1;
+            }
+            
+        },
+        bookSeats(){
+            let i;
+            for(i = 0; i < this.selectedSeats.length; i++) {
+                applicationServices.bookSeatByShowtimeIdAndSeatName(this.$route.params.id, this.selectedSeats[i]);
             }
             
         }
