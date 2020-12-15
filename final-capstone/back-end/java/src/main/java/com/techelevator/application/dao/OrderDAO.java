@@ -7,7 +7,7 @@ import com.techelevator.application.model.Order;
 public interface OrderDAO {
 
 	
-	public List<Order> getAllOrdersByUsername();
+	public List<Order> getAllOrdersByUsername(String username);
 	
 	public Order getOrderByOrderId(int id);
 }
