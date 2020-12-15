@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import ShowtimesPage from '../views/ShowtimesPage.vue'
 import SeatsPage from '../views/SeatsPage.vue'
+import AllOrdersPage from '../views/AllOrdersPage.vue'
 
 Vue.use(Router)
 
@@ -71,6 +72,14 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/orders/:username",
+      name: "myOrders",
+      component: AllOrdersPage,
+      meta:{
+        requiresAuth: true
+      }
+    }
   ]
 })
 

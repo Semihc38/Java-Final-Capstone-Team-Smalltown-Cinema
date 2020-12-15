@@ -51,7 +51,7 @@
                 <input type="text" id="billing" v-model="order.billingAddress" required="true" name="billing"><br>
 
                 <label for="checkout">Checkout</label><br>
-                <input type="submit" id="checkout" v-on:click.prevent="submitOrder" name="checkout"><br>
+                <input type="submit" id="checkout" v-if="!isHidden" v-on:click.prevent="submitOrder(), bookSeats(), isHidden = true" name="checkout"><br>
             </form>
         </div>
     </div>
@@ -91,6 +91,7 @@ export default {
             seniorCount: 0,
             totalTickets: 0,
             totalCosts: 0,
+            isHidden: false,
            
         }
     },
