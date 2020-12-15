@@ -8,6 +8,7 @@ DROP SEQUENCE IF EXISTS seq_movie_id;
 DROP SEQUENCE IF EXISTS seq_showtime_id;
 DROP SEQUENCE IF EXISTS seq_theater_id;
 DROP SEQUENCE IF EXISTS seq_seat_id;
+DROP SEQUENCE IF EXISTS seq_order_id;
 
 --Beginning of Movie Table--
 
