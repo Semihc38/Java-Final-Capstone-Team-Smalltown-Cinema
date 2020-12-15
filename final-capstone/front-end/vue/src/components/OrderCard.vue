@@ -1,7 +1,7 @@
 <template>
     <div class="order-card-container">
         <router-link v-bind:to="{ path: '/order/' + this.order.orderId }">
-        <h1 class ="order-number" >{{this.order.orderId}}: {{this.order.seats}} </h1>
+        <h1 class ="order-number" >Order #{{this.order.orderId}} | Seats: {{this.order.seats}} </h1>
         </router-link>
         
         

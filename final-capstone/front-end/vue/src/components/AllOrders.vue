@@ -24,7 +24,9 @@ export default {
     created(){
        applicationServices.getAllOrdersByUsername(this.$store.state.user.username).then(response => {
            this.orders = response.data;
+           
        })
+
     }
 }
 </script>
