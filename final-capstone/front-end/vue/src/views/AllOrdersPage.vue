@@ -1,22 +1,19 @@
 <template>
   <div>
     <h1 class="heading">My Orders</h1>
-    <div class="seats-tickets">
-      <div class="orders">
-        
-      </div>
-    
+    <div class="my-orders">
+    <all-orders />
     </div>
    
   </div>
 </template>
 
 <script>
-
+import AllOrders from '@/components/AllOrders.vue'
 export default {
   name: 'all-orders-page',
   components:{
-  
+  AllOrders
   },
 };
 
