@@ -57,6 +57,22 @@ public class JDBCShowtimesDAO implements ShowtimesDAO {
 		
 	}
 	
+	@Override
+	public Showtimes getShowtimeByShowtimeId(int id) {
+		String query = "SELECT * FROM showtimes WHERE showtime_id = ?";
+		
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id);
+		
+		Showtimes showtime = new Showtimes();
+		
+		if (rowSet.next()) {
+			showtime = mapRowToShowtimes(rowSet);
+			
+		}
+		
+		return showtime;
+	}
+	
 	
 	private Showtimes mapRowToShowtimes(SqlRowSet rowset) {
 		Showtimes showtimes = new Showtimes();

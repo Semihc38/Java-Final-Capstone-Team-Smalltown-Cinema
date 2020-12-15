@@ -10,6 +10,8 @@ public interface MovieDAO {
 	public List<Movie> getAllFeaturedMovies();
 	
 	public Movie getChosenMovie(Integer id);
+	
+	public Movie getMovieByShowtimeId(int id);
 }
 
 

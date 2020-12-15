@@ -8,39 +8,41 @@
             <div class="Adult">
                 <h2>Adult</h2>
                 <div class="counter-buttons">
-                    <button v-on:click="incrementAdultCount(), totalTicketCount()">+</button>
+                    <button v-on:click="incrementAdultCount(), totalTicketCount(), calculateTotalCost()">+</button>
                         <h3>{{adultCount}}</h3>
-                    <button v-on:click="decrementAdultCount(), totalTicketCount()">-</button>
+                    <button v-on:click="decrementAdultCount(), totalTicketCount(), calculateTotalCost()">-</button>
                 </div>
             </div>
             <div class="Child">
                 <h2>Child</h2>
                 <div class="counter-buttons">
-                    <button v-on:click="incrementChildCount(), totalTicketCount()">+</button>
+                    <button v-on:click="incrementChildCount(), totalTicketCount(), calculateTotalCost()">+</button>
                         <h3>{{childCount}}</h3>
-                    <button v-on:click="decrementChildCount(), totalTicketCount()">-</button>
+                    <button v-on:click="decrementChildCount(), totalTicketCount(), calculateTotalCost()">-</button>
                 </div>
             </div>
             <div class="Senior">
                 <h2>Senior</h2>
                 <div class="counter-buttons">
-                    <button v-on:click="incrementSeniorCount(), totalTicketCount() ">+</button>
+                    <button v-on:click="incrementSeniorCount(), totalTicketCount(), calculateTotalCost() ">+</button>
                         <h3>{{seniorCount}}</h3>
-                    <button v-on:click="decrementSeniorCount(), totalTicketCount()">-</button>
+                    <button v-on:click="decrementSeniorCount(), totalTicketCount(), calculateTotalCost()">-</button>
                 </div>
             </div>
                 <div class="total-tickets">
                     <h2>Total Tickets</h2>
                     <h3>{{totalTickets}}</h3>
                 </div>
+                   <div class="total-cost">
+                    <h2>Total Cost</h2>
+                    <h3>${{totalCost}}.00</h3>
+                </div>
         </div>
         <div class="form-container">
             <h1>Checkout</h1>
             <form class="checkout-form">
-                <label for="fname">First name:</label><br>
+                <label for="fname">Full Name:</label><br>
                 <input type="text" id="fname" name="fname"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname">
                 <label for="email">Email:</label><br>
                 <input type="text" id="email" name="email">
                 <label for="billing">Billing Address:</label><br>
@@ -72,7 +74,8 @@ export default {
             adultCount: 0,
             childCount: 0,
             seniorCount: 0,
-            totalTickets: 0
+            totalTickets: 0,
+            totalCost: 0
         }
     },
     methods:{
@@ -122,11 +125,26 @@ export default {
                 applicationServices.bookSeatByShowtimeIdAndSeatName(this.$route.params.id, this.selectedSeats[i]);
             }
             
+        },
+        calculateTotalCost(){
+            if(this.showtimes.matinee === true){
+                this.totalCost = (this.childCount * 8) + (this.adultCount * 13) + (this.seniorCount * 10);
+            } else {
+                this.totalCost = (this.childCount * 10) + (this.adultCount * 15) + (this.seniorCount * 12);
+            }
         }
     },
     created(){
       applicationServices.getSeatsByShowtimeId(this.$route.params.id).then(response => {
           this.seats = response.data;
+      })
+
+      applicationServices.getMovieByShowtimeId(this.$route.params.id).then(response => {
+          this.movie = response.data;
+      })
+
+      applicationServices.getShowtimeByShowtimeId(this.$route.params.id).then(response => {
+          this.showtimes = response.data;
       })
 
     }

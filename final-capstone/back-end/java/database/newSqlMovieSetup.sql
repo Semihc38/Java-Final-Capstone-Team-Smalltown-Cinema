@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS movies CASCADE;
 DROP TABLE IF EXISTS showtimes CASCADE;
 DROP TABLE IF EXISTS theaters CASCADE;
 DROP TABLE IF EXISTS seats CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
 
 DROP SEQUENCE IF EXISTS seq_movie_id;
 DROP SEQUENCE IF EXISTS seq_showtime_id;
@@ -198,3 +199,25 @@ is_booked boolean,
 CONSTRAINT PK_seats PRIMARY KEY(seat_id),
 CONSTRAINT FK_showtime FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
 );
+
+CREATE SEQUENCE seq_order_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;  
+  
+CREATE TABLE orders(
+order_id int DEFAULT nextval('seq_order_id'::regclass) NOT NULL,
+username varchar (100) NOT NULL,
+full_name varchar (150) NOT NULL,
+email varchar (300) NOT NULL,
+billing_address varchar (300),
+showtime_id int NOT NULL,
+seats varchar (200) NOT NULL,
+total_cost int NOT NULL,
+CONSTRAINT PK_orders PRIMARY KEY(order_id),
+CONSTRAINT FK_showtime FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
+);
+
+
+

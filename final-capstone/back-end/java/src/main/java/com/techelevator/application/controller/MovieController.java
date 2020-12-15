@@ -32,4 +32,9 @@ public class MovieController {
 	public Movie getChosenMovie(@PathVariable Integer id) {
 		return movieDao.getChosenMovie(id);
 	}
+	
+	@RequestMapping(path = "/movieByShowtime/{id}", method = RequestMethod.GET)
+	public Movie getMovieByShowtimeId(@PathVariable int id) {
+		return movieDao.getMovieByShowtimeId(id);
+	}
 }

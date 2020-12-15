@@ -52,6 +52,21 @@ public class JDBCMovieDAO implements MovieDAO {
 		return movie;
 	}
 	
+	@Override
+	public Movie getMovieByShowtimeId(int id) {
+		String query = "SELECT movies.* FROM movies JOIN showtimes ON showtimes.movie_id = movies.movie_id WHERE showtimes.showtime_id = ?";
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(query, id);
+		
+		Movie movie = new Movie();
+		if(rowSet.next()) {
+			movie = mapRowToMovie(rowSet);
+		}
+		
+		return movie;
+		
+		
+	}
+	
 	
 	
 	

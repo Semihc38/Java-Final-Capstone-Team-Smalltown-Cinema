@@ -26,6 +26,12 @@ export default{
     },
     getSeatsByShowtimeId(id){
         return http.get(`/seats/${id}`);
+    },
+    getMovieByShowtimeId(id){
+        return http.get(`/movieByShowtime/${id}`);
+    },
+    getShowtimeByShowtimeId(id){
+        return http.get(`/showtime/${id}`);
     }
 
 }

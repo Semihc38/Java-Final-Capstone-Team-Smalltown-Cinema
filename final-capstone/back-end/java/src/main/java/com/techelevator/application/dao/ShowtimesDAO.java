@@ -10,4 +10,6 @@ public interface ShowtimesDAO {
 	
 	public List<Showtimes> getShowtimesByMovieIdAndDayOfWeek(int id, String dayofweek);
 	
+	public Showtimes getShowtimeByShowtimeId(int id);
+	
 }

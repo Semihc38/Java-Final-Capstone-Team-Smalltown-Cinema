@@ -31,5 +31,10 @@ public class ShowtimesController {
 		return showtimesDao.getShowtimesByMovieIdAndDayOfWeek(id, dayofweek); 
 	}
 	
+	@RequestMapping(path = "/showtime/{id}", method = RequestMethod.GET)
+	public Showtimes getShowtimeByShowtimeId(@PathVariable int id) {
+		return showtimesDao.getShowtimeByShowtimeId(id);
+	}
+	
 	
 }
