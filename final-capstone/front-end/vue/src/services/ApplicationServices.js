@@ -32,6 +32,15 @@ export default{
     },
     getShowtimeByShowtimeId(id){
         return http.get(`/showtime/${id}`);
+    },
+    getAllOrdersByUsername(username){
+        return http.get(`/orders/${username}`);
+    },
+    getOrderByOrderId(id){
+        return http.get(`/order/${id}`);
+    },
+    addOrder(order){
+        return http.post(`/orders`, order)
     }
 
 }

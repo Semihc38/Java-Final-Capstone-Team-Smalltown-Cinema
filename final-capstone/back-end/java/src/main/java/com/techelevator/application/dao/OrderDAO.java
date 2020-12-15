@@ -10,4 +10,6 @@ public interface OrderDAO {
 	public List<Order> getAllOrdersByUsername(String username);
 	
 	public Order getOrderByOrderId(int id);
+	
+	public void addOrder(Order order);
 }

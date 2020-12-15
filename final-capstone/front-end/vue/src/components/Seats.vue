@@ -1,7 +1,7 @@
 <template>
     <div class="seat-ticket-container">
         <div class="seats-container">
-            <seat-card v-on:click.native="selectSeats(seat.name)" v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
+            <seat-card v-on:click.native="selectSeats(seat.name), selectedSeatsToString()" v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
         </div>
         <div class="tickets-container">
             <h1>Select Tickets</h1>
@@ -35,20 +35,23 @@
                 </div>
                    <div class="total-cost">
                     <h2>Total Cost</h2>
-                    <h3>${{totalCost}}.00</h3>
+                    <h3>${{totalCosts}}.00</h3>
                 </div>
         </div>
         <div class="form-container">
             <h1>Checkout</h1>
             <form class="checkout-form">
                 <label for="fname">Full Name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <input type="text" id="fname" v-model="order.fullName" required="true" name="fname"><br>
+
                 <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" v-model="order.email" required="true" name="email">
+
                 <label for="billing">Billing Address:</label><br>
-                <input type="text" id="billing" name="billing"><br>
+                <input type="text" id="billing" v-model="order.billingAddress" required="true" name="billing"><br>
+
                 <label for="checkout">Checkout</label><br>
-                <input type="submit" id="checkout" name="checkout"><br>
+                <input type="submit" id="checkout" v-on:click.prevent="submitOrder" name="checkout"><br>
             </form>
         </div>
     </div>
@@ -66,6 +69,18 @@ export default {
     name:'seats',
     data(){
         return {
+             
+             order: {
+                 username: this.$store.state.user.username,
+                 fullName: "",
+                 email: "",
+                 billingAddress: "",
+                 showtimeId: this.$route.params.id,
+                 seats: "",
+                 totalCost: 0
+             },
+          
+            
             selectedCount: 0,
             movie: [],
             showtimes: [],
@@ -75,7 +90,8 @@ export default {
             childCount: 0,
             seniorCount: 0,
             totalTickets: 0,
-            totalCost: 0
+            totalCosts: 0,
+           
         }
     },
     methods:{
@@ -128,10 +144,19 @@ export default {
         },
         calculateTotalCost(){
             if(this.showtimes.matinee === true){
-                this.totalCost = (this.childCount * 8) + (this.adultCount * 13) + (this.seniorCount * 10);
+                this.totalCosts = (this.childCount * 8) + (this.adultCount * 13) + (this.seniorCount * 10);
+                this.order.totalCost = this.totalCosts;
             } else {
-                this.totalCost = (this.childCount * 10) + (this.adultCount * 15) + (this.seniorCount * 12);
+                this.totalCosts = (this.childCount * 10) + (this.adultCount * 15) + (this.seniorCount * 12);
+                this.order.totalCost = this.totalCosts;
             }
+        },
+        submitOrder() {
+            applicationServices.addOrder(this.order);
+        },
+        selectedSeatsToString(){
+            
+            this.order.seats = this.selectedSeats.join(', ');
         }
     },
     created(){

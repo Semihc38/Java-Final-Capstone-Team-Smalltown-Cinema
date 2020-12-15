@@ -53,6 +53,18 @@ public class JDBCOrderDAO implements OrderDAO {
 		return order;
 	}
 	
+	@Override
+	public void addOrder(Order order) {
+		
+	String query = "INSERT INTO orders (username, full_name, email, billing_address, showtime_id, seats, total_cost) VALUES (?, ?, ?, ?, ? ,?, ?)";
+	jdbcTemplate.update(query, order.getUsername(), order.getFullName(), order.getEmail(), order.getBillingAddress(), order.getShowtimeId(), order.getSeats(), order.getTotalCost());
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 	
