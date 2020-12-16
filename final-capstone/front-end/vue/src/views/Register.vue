@@ -1,10 +1,11 @@
 <template>
-  <div id="register" class="text-center">
+  <div id="register-page" class="text-center">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
+      <div id="username-div">
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -15,6 +16,8 @@
         required
         autofocus
       />
+      </div>
+      <div id="password-div">
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -24,6 +27,8 @@
         v-model="user.password"
         required
       />
+      </div>
+      <div id="confirm-password">
       <input
         type="password"
         id="confirmPassword"
@@ -32,10 +37,18 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      </div>
+      <div id="create-account">
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
+      </div>
+
+      <div id="have-account">
+      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      </div>
+
+      
     </form>
   </div>
 </template>
@@ -91,8 +104,21 @@ export default {
 </script>
 
 <style>
-#register{
+
+h1{
+  background-color: #231F20;
+  max-width: 60%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+  color: #8E793E;
+  margin-bottom: 20px;
+}
+
+
+#register-page{
   background-color: #8E793E;
+  background-image: url('../assets/fancy-image.jpg');
   padding-bottom: 20px;
   color: #EAEAEA;
   max-width: 50%;
@@ -101,4 +127,54 @@ export default {
   margin-top: 10%;
 }
 
+#username-div{
+  background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+  
+}
+#password-div{
+  background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#username{
+margin-left: 1%;
+border-radius: 5px;
+}
+
+#password{
+margin-left: 1%;
+border-radius: 5px;
+}
+
+#confirm-password{
+  background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#create-account{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#have-account{
+ background-color: #231F20;
+  max-width: 50%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px; 
+}
+
+a{
+  color: #EAEAEA;
+}
 </style>

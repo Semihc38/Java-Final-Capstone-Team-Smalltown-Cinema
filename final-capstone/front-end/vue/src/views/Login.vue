@@ -122,7 +122,7 @@ h1{
   border: 2px solid #AD974F;
   margin: auto;
   border-radius: 5px;
-  margin-bottom: 2px;
+  
 }
 #password-div{
   background-color: #231F20;
