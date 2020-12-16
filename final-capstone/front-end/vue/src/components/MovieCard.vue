@@ -20,11 +20,8 @@ export default {
 #movie-title{
     font-size: 1.5vw;
     height: 20%;
-     background-color: #231F20;
   max-width: 60%;
-  border: 2px solid #AD974F;
   margin: auto;
-  border-radius: 5px;
   color: #8E793E;
   margin-bottom: 20px;
 }

@@ -76,6 +76,7 @@ export default {
     justify-content: flex-start;
     border: 5px double #AD974F;
     margin-top: 10%;
+    
 
 }
 .movie-overview{
@@ -113,6 +114,7 @@ img.showtime-movie-poster{
     padding-left: 10%;
     padding-bottom: 5%;
     padding-top: 5%;
+    align-self: center
    
 
 }

@@ -46,13 +46,13 @@
             <h1>Checkout</h1>
             <form class="checkout-form">
                 <label for="fname">Full Name:</label><br>
-                <input type="text" id="fname" v-model="order.fullName" required="true" name="fname"><br>
+                <input class="checkout-box" type="text" id="fname" v-model="order.fullName" required="true" name="fname"><br>
 
                 <label for="email">Email:</label><br>
-                <input type="text" id="email" v-model="order.email" required="true" name="email">
+                <input class="checkout-box" type="text" id="email" v-model="order.email" required="true" name="email">
 
                 <label for="billing">Billing Address:</label><br>
-                <input type="text" id="billing" v-model="order.billingAddress" required="true" name="billing"><br>
+                <input class="checkout-box" type="text" id="billing" v-model="order.billingAddress" required="true" name="billing"><br>
 
                 <label for="checkout"></label><br>
                 <input type="submit" id="checkout" v-if="!isHidden" v-on:click.prevent="submitOrder(), bookSeats(), isHidden = true" name="checkout"><br>
@@ -230,7 +230,7 @@ export default {
                         'selected-box form-container';
 }
 
-input[type=submit] {
+#checkout {
   background-color:#AD974F;
   color: #EAEAEA;
   padding: 12px 20px;
@@ -238,7 +238,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-input[type=text], select, textarea {
+.checkout-box, select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
