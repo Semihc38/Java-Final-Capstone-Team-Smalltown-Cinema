@@ -31,11 +31,13 @@ export default {
 }
 </script>
 <style scoped>
+
+
 .order-container {
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background: #EAEAEA;
+    
 }
 
 </style>

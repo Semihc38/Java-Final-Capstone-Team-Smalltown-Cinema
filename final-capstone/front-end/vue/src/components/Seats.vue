@@ -1,8 +1,11 @@
 <template>
     <div class="seat-ticket-container">
+
         <div class="seats-container">
             <seat-card v-on:click.native="selectSeats(seat.name), selectedSeatsToString()" v-for="seat in this.seats" v-bind:key="seat.name" v-bind:seat="seat" />
         </div>
+       
+        
         <div class="tickets-container">
             <h1>Select Tickets</h1>
             <div class="Adult">
@@ -37,6 +40,7 @@
                     <h2>Total Cost</h2>
                     <h3>${{totalCosts}}.00</h3>
                 </div>
+                
         </div>
         <div class="form-container">
             <h1>Checkout</h1>
@@ -50,9 +54,18 @@
                 <label for="billing">Billing Address:</label><br>
                 <input type="text" id="billing" v-model="order.billingAddress" required="true" name="billing"><br>
 
-                <label for="checkout">Checkout</label><br>
+                <label for="checkout"></label><br>
                 <input type="submit" id="checkout" v-if="!isHidden" v-on:click.prevent="submitOrder(), bookSeats(), isHidden = true" name="checkout"><br>
             </form>
+            <div class="orders-button-container">
+                <br />
+                <router-link v-bind:to="{ name: 'myOrders' }">
+                <button class="orders-button" v-if = isHidden>My Orders</button>
+                </router-link>
+            </div>
+        </div>
+        <div class="selected-box">
+            <h2>Selected Seats: {{this.selectedSeats.join(', ')}}</h2>
         </div>
     </div>
 </template>
@@ -178,6 +191,14 @@ export default {
 </script>
 
 <style>
+.orders-button {
+     background-color:#AD974F;
+  color: #EAEAEA;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .seats-container {
     width: 50%;
@@ -194,15 +215,19 @@ export default {
     background-color: #EAEAEA;
     color: #231F20;
     border: 5px double #AD974F;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 50%;
 }
 
 .seat-ticket-container{
     display: grid;
-    grid-template-columns: 2fr, 1fr;
-    grid-template-rows: 2fr, 1fr;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
     grid-template-areas: 'heading heading'
                         'tickets-container seats-container'
-                        'form-container .';
+                        'selected-box form-container';
 }
 
 input[type=submit] {
@@ -225,5 +250,6 @@ input[type=text], select, textarea {
 }
 .form-container{
     padding-top: 10%;
+    text-align: center;
 }
 </style>
