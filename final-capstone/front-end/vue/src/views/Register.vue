@@ -1,7 +1,7 @@
 <template>
   <div id="register-page" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 id="register-title" class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
@@ -105,7 +105,7 @@ export default {
 
 <style>
 
-h1{
+#register-title{
   background-color: #231F20;
   max-width: 60%;
   border: 2px solid #AD974F;
@@ -174,7 +174,7 @@ border-radius: 5px;
   border-radius: 5px; 
 }
 
-a{
+#have-account a{
   color: #EAEAEA;
 }
 </style>

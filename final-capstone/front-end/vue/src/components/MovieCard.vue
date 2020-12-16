@@ -1,11 +1,11 @@
 <template>
     <div class="movie-card">
         <router-link v-bind:to="{ path: '/showtimes/' + this.movie.movieId }">
-        <h1 class ="movie-title" >{{this.movie.title}}</h1>
+        <h1 id="movie-title" class ="movie-title" >{{this.movie.title}}</h1>
         </router-link>
         
         <router-link class="movie-title" v-bind:to="{ path: '/showtimes/' + this.movie.movieId }">
-        <img class ="movie-poster"  v-if="movie.poster" v-bind:src="movie.poster" />
+        <img id="movie-poster" class ="movie-poster"  v-if="movie.poster" v-bind:src="movie.poster" />
         </router-link>
         
     </div>
@@ -17,11 +17,18 @@ export default {
 }
 </script>
 <style>
-.movie-title{
+#movie-title{
     font-size: 1.5vw;
-    height: 10%;
+    height: 20%;
+     background-color: #231F20;
+  max-width: 60%;
+  border: 2px solid #AD974F;
+  margin: auto;
+  border-radius: 5px;
+  color: #8E793E;
+  margin-bottom: 20px;
 }
-.movie-poster{
+#movie-poster{
     max-width: 75%;
     max-height: auto;
     margin-top: 10px;

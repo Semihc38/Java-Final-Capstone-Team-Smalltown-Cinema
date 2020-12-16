@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Welcome to Small Town Cinemas</h1>
+      <h1 id="login-title" class="h3 mb-3 font-weight-normal">Welcome to Small Town Cinemas</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -106,7 +106,7 @@ color: #EAEAEA;
   margin-top: 10%;
 }
 
-h1{
+#login-title{
   background-color: #231F20;
   max-width: 60%;
   border: 2px solid #AD974F;
@@ -154,7 +154,7 @@ border-radius: 5px;
   margin-bottom: 5px;
 }
 
-a{
+#register a{
   color: #EAEAEA;
 }
 
